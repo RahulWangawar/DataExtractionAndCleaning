@@ -22,3 +22,9 @@
     
 #### Graph View of ETL pipeline    
 ![image](https://user-images.githubusercontent.com/76062197/164268833-3e46ea72-dba3-497c-ab70-59bf348b5291.png)
+
+### Reports
+    The total number of invalid data and the percentage of invalids in the dataset was also found
+    out and reported.
+![image](https://user-images.githubusercontent.com/76062197/164270363-ce804777-8d27-48bc-938f-8b778e37a475.png)
+
