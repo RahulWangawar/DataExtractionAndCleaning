@@ -14,3 +14,4 @@
     In the transformation part, certain irrelevant attributes were removed from the original data, 
     as well as some necessary attributes were generated from the original data. 
     Finally, this usable format of data is stored on HDFS for application use.
+![image](https://user-images.githubusercontent.com/76062197/164268833-3e46ea72-dba3-497c-ab70-59bf348b5291.png)
