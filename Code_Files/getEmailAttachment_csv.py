@@ -14,7 +14,7 @@ download_folder = "/home/rahulw/PycharmProjects/Final_Project/Ingestion/Airflow_
 if not os.path.isdir(download_folder):
     os.makedirs(download_folder, exist_ok=True)
 
-mail = Imbox(host, username=username, password=password, ssl=True, ssl_context=None, starttls=False)
+mail = Imbox(host, username=username, password=password, ssl=True, ssl_context=None, starttls=False)# secure socket layer
 messages = mail.messages(subject='Get attachment') # defaults to inbox
 
 for (uid, message) in messages:
