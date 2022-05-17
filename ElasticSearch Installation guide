@@ -1,0 +1,61 @@
+curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
+sudo apt update
+
+sudo apt install elasticsearch
+
+# Step 2 — Configuring Elasticsearch
+
+sudo nano /etc/elasticsearch/elasticsearch.yml
+
+sudo systemctl start elasticsearch
+
+sudo systemctl enable elasticsearch
+
+# Step 3 — Securing Elasticsearch
+
+sudo ufw allow from 198.51.100.0 to any port 9200
+
+sudo ufw enable
+
+sudo ufw status
+
+# Step 4 — Testing Elasticsearch
+
+curl -X GET 'http://localhost:9200'
+
+curl -XGET 'http://localhost:9200/_nodes?pretty'
+
+# Step 5 — Using Elasticsearch
+
+# You can add your first entry like so
+
+curl -XPOST -H "Content-Type: application/json" 'http://localhost:9200/tutorial/helloworld/1' '{ "message": "Hello World!" }'
+
+# You can retrieve this first entry with an HTTP GET request.
+curl -X GET -H "Content-Type: application/json" 'http://localhost:9200/tutorial/helloworld/1' '{ "message": "Hello World!" }'
+
+
+# To modify an existing entry, you can use an HTTP PUT request.
+
+curl -X PUT -H "Content-Type: application/json"  'localhost:9200/tutorial/helloworld/1?pretty' '
+{
+  "message": "Hello, People!"
+}'
+
+# You can also “prettify” your results when retrieving data to get #a more readable output by entering the following command:
+curl -X GET -H "Content-Type: application/json" 'http://localhost:9200/tutorial/helloworld/1?pretty'
+
+
+
+
+
+
+
+
+
+
+
